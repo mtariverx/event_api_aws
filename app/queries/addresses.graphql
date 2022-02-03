@@ -1,0 +1,16 @@
+query GetAddresses($page_num: Int, $page_size: Int, $updated_before: DateTime, $updated_after: DateTime) {
+  addresses(page: $page_num, pagesize: $page_size, updatedBefore: $updated_before, updatedAfter: $updated_after) {
+    id
+    addressLine1
+    addressLine2
+    city
+    stateProvince
+    postalCode
+    client {
+      pimsId
+      pets {
+        id
+      }
+    }
+  }
+}

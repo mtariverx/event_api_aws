@@ -1,0 +1,14 @@
+query GetClients($page_num: Int, $page_size: Int, $updated_before: DateTime, $updated_after: DateTime) {
+  clients(page: $page_num, pagesize: $page_size, updatedBefore: $updated_before, updatedAfter: $updated_after) {
+    pimsId
+    firstName
+    lastName
+    balance
+    classificationCode
+    classificationDescription
+    pets {
+      id
+    }
+    enteredDate
+  }
+}

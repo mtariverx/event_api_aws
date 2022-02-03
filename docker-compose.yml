@@ -1,0 +1,18 @@
+version: '3'
+services :
+    flask:
+        build: .
+        command: "gunicorn -w 1 -b 0.0.0.0:5000 wsgi:app"
+        ports:
+            - "5000:5000"
+            - "10737:10737"
+        restart: always
+    celery:
+        build: .
+        command: "celery -A app.flask_.celery_ worker"
+        depends_on:
+            - flask
+    redis:
+        image: redis
+        ports:
+            - "6379:6379"           

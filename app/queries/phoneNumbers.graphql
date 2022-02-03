@@ -1,0 +1,11 @@
+query GetPhoneNumbers($page_num: Int, $page_size: Int, $updated_before: DateTime, $updated_after: DateTime) {
+  phoneNumbers(page: $page_num, pagesize: $page_size, updatedBefore: $updated_before, updatedAfter: $updated_after) {
+    client {
+      pimsId
+    }
+    id
+    number
+    sMS
+    isPrimary
+  }
+}

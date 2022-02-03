@@ -1,0 +1,13 @@
+query GetSOAPs($page_num: Int, $page_size: Int, $updated_before: DateTime, $updated_after: DateTime) {
+  sOAPs(page: $page_num, pagesize: $page_size, updatedBefore: $updated_before, updatedAfter: $updated_after) {
+    pimsId
+    subjective
+    objective
+    assessment
+    plan
+    patient {
+      pimsId
+    }
+    createDate
+  }
+}

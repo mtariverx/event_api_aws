@@ -1,0 +1,20 @@
+query GetTransactions($page_num: Int, $page_size: Int, $updated_before: DateTime, $updated_after: DateTime) {
+  transactions(page: $page_num, pagesize: $page_size, updatedBefore: $updated_before, updatedAfter: $updated_after) {
+    id
+    code {
+      id
+    }
+    client {
+      pimsId
+    }
+    patient {
+      id
+    }
+    amount
+    invoiceNumber
+    quantity
+    datePerformed
+    comments
+    description
+  }
+}

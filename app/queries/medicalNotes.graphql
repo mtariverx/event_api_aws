@@ -1,0 +1,12 @@
+query GetMedicalNotes($page_num: Int, $page_size: Int, $updated_before: DateTime, $updated_after: DateTime) {
+  medicalNotes(page: $page_num, pagesize: $page_size, updatedBefore: $updated_before, updatedAfter: $updated_after) {
+    dateEntered
+    deleted
+    id
+    imported
+    note
+    patient { id }
+    status
+    updated
+  }
+}

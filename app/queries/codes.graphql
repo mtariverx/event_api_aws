@@ -1,0 +1,9 @@
+query GetCodes($page_num: Int, $page_size: Int, $updated_before: DateTime, $updated_after: DateTime) {
+  codes(page: $page_num, pagesize: $page_size, updatedBefore: $updated_before, updatedAfter: $updated_after) {
+    id
+    code
+    itemDescription
+    codeCategory
+    codeCategoryDescription
+  }
+}

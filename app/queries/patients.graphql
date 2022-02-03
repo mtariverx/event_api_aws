@@ -1,0 +1,25 @@
+query GetPatients($page_num: Int, $page_size: Int, $updated_before: DateTime, $updated_after: DateTime) {
+  patients(page: $page_num, pagesize: $page_size, updatedBefore: $updated_before, updatedAfter: $updated_after) {
+    id
+    name
+    color
+    currentWeight
+    dateOfBirth
+    dateOfDeath
+    genderDescription
+    microChip
+    rabies
+    allergies
+    alerts
+    enteredDate
+    patientBreed {
+      id
+    }
+    patientSpecies {
+      id
+    }
+    owner {
+      pimsId
+    }
+  }
+}

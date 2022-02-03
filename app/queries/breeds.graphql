@@ -1,0 +1,6 @@
+query GetBreeds($page_num: Int, $page_size: Int, $updated_before: DateTime, $updated_after: DateTime) {
+  breeds(page: $page_num, pagesize: $page_size, updatedBefore: $updated_before, updatedAfter: $updated_after) {
+    id
+    description
+  }
+}
